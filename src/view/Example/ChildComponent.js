@@ -1,7 +1,6 @@
 import React from "react";
-import ChildComponent from "./ChildComponent";
 
-class MyComponent extends React.Component{
+class ChildComponent extends React.Component{
     
     state= {
         firstName:'',
@@ -27,23 +26,12 @@ class MyComponent extends React.Component{
           <>
          {/* <> giup bọc ngoai 2 the div và in ra 2 thẻ div rieng biệt*/}
                 
-         <form >
-  <label htmlFor="fname">First name:</label><br/>
-  <input
-    type="text"
-    value={this.state.firstName}
-    onChange={(event)=>this.handleChangeFirstName(event)}
-    /><br/>
-  <label htmlFor="lname">Last name:</label><br/>
-  <input type="text"  value={this.state.lastName}
-  onChange={(event)=>this.handleChangeLastName(event)} /><br/><br/>
-  <input type="submit" 
-  onClick={(event)=>this.handleSubmit(event)}/>
-    </form> 
-     <ChildComponent name={'child one'}/>
-    
+        <div>
+        ChildComponent {this.props.name}
+        </div>
+
             </>
         )
     }
 }
-export default MyComponent;
+export default ChildComponent;
