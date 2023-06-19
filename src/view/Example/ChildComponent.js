@@ -22,12 +22,14 @@ class ChildComponent extends React.Component{
  }
     render(){
         // let name='Duong';
+        console.log('<<< check props:', this.props)
+        let {name, age}=this.props;
         return(
           <>
          {/* <> giup bọc ngoai 2 the div và in ra 2 thẻ div rieng biệt*/}
                 
         <div>
-        ChildComponent {this.props.name}
+        ChildComponent {name}- {age}
         </div>
 
             </>
