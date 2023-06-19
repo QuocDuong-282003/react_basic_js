@@ -16,7 +16,7 @@ class MyComponent extends React.Component{
             lastName: event.target.value
         })
  }
- handleSubmit =(event)=>{
+ handleSubmit = (event)=>{
     event.preventDefault()
     alert('Click me')
  }
@@ -36,8 +36,8 @@ class MyComponent extends React.Component{
   <label htmlFor="lname">Last name:</label><br/>
   <input type="text"  value={this.state.lastName}
   onChange={(event)=>this.handleChangeLastName(event)} /><br/><br/>
-  <input type="button" 
-  onClick={(event)=>this.handleSubmit()}/>
+  <input type="submit" 
+  onClick={(event)=>this.handleSubmit(event)}/>
     </form> 
 
             </>
