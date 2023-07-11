@@ -1,26 +1,69 @@
 import logo from './logo.svg';
 import './App.scss';
 import MyComponent from './Example/MyComponent.js';
+import ListTodo from './Todos/ListTodo';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import Nav from './Nav/Nav.js';
+import Home from './Example/Home';
+
+import {
+  BrowserRouter,
+ 
+  Route,
+  Link,
+  Switch
+} from 'react-router-dom';
+
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hello world with React (Tran Quoc Duong) 
-        </p>
-        {/* <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a> */}
-        <MyComponent/>
-        
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+
+        <header className="App-header">
+          <Nav />
+          <img src={logo} className="App-logo" alt="logo" />
+
+
+
+          {/* <MyComponent/> */}
+
+
+          {/* < ListTodo />  */}
+
+
+
+          <Switch>
+            <Route path="/" >
+              <Home />
+            </Route>
+            <Route path="/todo">
+              <ListTodo />
+            </Route>
+            <Route path="/about">
+              <MyComponent />
+            </Route>
+          </Switch>
+
+        </header>
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
+        {/* Same as */}
+        <ToastContainer />
+      </div>
+    </BrowserRouter>
   );
 }
 
